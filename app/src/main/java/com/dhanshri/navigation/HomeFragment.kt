@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.dhanshri.navigation.databinding.FragmentHomeBinding
 
@@ -20,7 +21,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        binding.btnSignup.setOnClickListener {
+        binding.btnSignup.setOnClickListener {                                                  // Using navigation navcontroller
             it.findNavController().navigate(R.id.action_homeFragment_to_secondFragment)
 //            if (!TextUtils.isEmpty(binding.editTextTextPersonName2.text.toString())){
 //                val bundle : Bundle = bundleOf("user_input" to binding.editTextTextPersonName2.text.toString())
@@ -28,7 +29,12 @@ class HomeFragment : Fragment() {
 //            } else{
 //                Toast.makeText(requireContext(), "Please enter something",Toast.LENGTH_LONG).show()
 //            }
+        }
 
+        binding.btnDest.setOnClickListener { // Navigate to destination button
+
+            Toast.makeText(requireContext(), "Navigation through destionation navigation", Toast.LENGTH_LONG).show()
+            Navigation.createNavigateOnClickListener(R.id.secondFragment)
         }
         binding.btnTerms.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_termsFragment)
