@@ -13,19 +13,19 @@ class UsersRepo(private val userDao: UserDao) {
 
     val users = userDao.getAllSubscribers()
 
-    suspend fun insertUserData(users: Users){
-        userDao.insertUsers(users)
+    suspend fun insertUserData(users: Users) : Long{
+        return userDao.insertUsers(users)
     }
 
-    suspend fun updateUserData(users: Users){
-        userDao.updateUsers(users)
+    suspend fun updateUserData(users: Users) : Int{
+        return userDao.updateUsers(users)
     }
 
-    suspend fun deleteUserData(users: Users){
-        userDao.deleteUsers(users)
+    suspend fun deleteUserData(users: Users) : Int{
+       return userDao.deleteUsers(users)
     }
 
-    suspend fun deleteAllData(){
-        userDao.deleteAllUsers()
+    suspend fun deleteAllData() : Int{
+        return userDao.deleteAllUsers()
     }
 }

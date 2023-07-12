@@ -56,8 +56,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:backgroundTint="@color/teal_700"
             android:layout_weight="1"
             android:textColor="@color/white"
+            tools:text="Save"
             android:text="@={userViewModel.saveOrUpdateButtonText}"/>
 
         <Button
@@ -67,7 +69,9 @@
             android:layout_marginStart="28dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:backgroundTint="@color/teal_700"
             android:textColor="@color/white"
+            tools:text="Clear all"
             android:text="@={userViewModel.clearAllOrDeleteButtonText}" />
 
     </LinearLayout>
